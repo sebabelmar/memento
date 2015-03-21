@@ -12,6 +12,7 @@ module.exports = function(app) {
 
   // Loads Media from Instagram
   app.route('/users/load_media').get(users.loadMedia);
+  app.route('/users/find_media').get(users.findMedia);
 
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);

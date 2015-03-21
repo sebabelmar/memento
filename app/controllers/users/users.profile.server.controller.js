@@ -9,7 +9,8 @@ var _ = require('lodash'),
 	passport = require('passport'),
 	request = require('request'),
 	User = mongoose.model('User'),
-	Media = mongoose.model('Medium');
+	Media = mongoose.model('Medium'),
+	ObjectId = require('mongoose').Types.ObjectId;
 
 /**
  * Update user details
@@ -67,11 +68,12 @@ exports.loadMedia = function(req, res){
 	  if (!error && response.statusCode == 200) {
 			var instagramPics = JSON.parse(body);
 			var user_id = req.param('user_id');
+			console.log("user_id");
 
 			iterateOverResponse(instagramPics.data, user_id)
 			return res.json(200)
 	  }else{
-	  	console.log("algoa anda mal!")
+	  	console.log("algo anda mal!");
 	  }
 	})
 };
@@ -103,12 +105,32 @@ var saveMedia = function(media, userId){
 		thumbnail: thumbnail,
 		standardUrl: standardUrl,
 		instagramId: media.id,
-		user: userId
+		user: mongoose.Types.ObjectId(userId)
 	});
 
 	media.save(function (err) {
 	  if (err) return console.log(err);
 	  // saved!
 	})
-
 }
+
+
+	/**
+	 * Media of a user
+	 */
+	exports.findMedia = function(req, res){
+		console.log(req.param('user_id'));
+		var userId = new ObjectId(req.param('user_id'));
+		console.log('userId');
+		var query = Media.where({"user": userId});
+		query.find(function(err, media) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				console.log("WIN")
+				res.jsonp(media);
+			}
+		});
+	};

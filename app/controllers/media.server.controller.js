@@ -72,7 +72,7 @@ exports.delete = function(req, res) {
 /**
  * List of Media
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
 	Medium.find().sort('-created').populate('user', 'displayName').exec(function(err, media) {
 		if (err) {
 			return res.status(400).send({
@@ -87,7 +87,7 @@ exports.list = function(req, res) {
 /**
  * Medium middleware
  */
-exports.mediumByID = function(req, res, next, id) { 
+exports.mediumByID = function(req, res, next, id) {
 	Medium.findById(id).populate('user', 'displayName').exec(function(err, medium) {
 		if (err) return next(err);
 		if (! medium) return next(new Error('Failed to load Medium ' + id));
