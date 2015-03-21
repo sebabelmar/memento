@@ -9,6 +9,10 @@ module.exports = function(app) {
 	// User Routes
 	var users = require('../../app/controllers/users.server.controller');
 
+
+  // Loads Media from Instagram
+  app.route('/users/load_media').get(users.loadMedia);
+
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);
 	app.route('/users').put(users.update);
