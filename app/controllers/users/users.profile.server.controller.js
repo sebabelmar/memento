@@ -7,6 +7,7 @@ var _ = require('lodash'),
 	errorHandler = require('../errors.server.controller.js'),
 	mongoose = require('mongoose'),
 	passport = require('passport'),
+	request = require('request'),
 	User = mongoose.model('User'),
 	Media = mongoose.model('Medium');
 
@@ -60,8 +61,8 @@ exports.me = function(req, res) {
  * Send User's pics
  */
 exports.loadMedia = function(req, res){
-	var url =  "https://api.instagram.com/v1/users/369004168/media/recent/?access_token=" + req.param('token');
-
+	var url =  "https://api.instagram.com/v1/users/" + req.param('instagram_id') + "/media/recent/?client_id=aab5e63dbef24de2a92288f892bd5c77";
+	console.log("vamos bien")
 	request(url, function (error, response, body) {
 	  if (!error && response.statusCode == 200) {
 			var instagramPics = JSON.parse(body);
@@ -69,6 +70,8 @@ exports.loadMedia = function(req, res){
 
 			iterateOverResponse(instagramPics.data, user_id)
 			return res.json(200)
+	  }else{
+	  	console.log("algoa anda mal!")
 	  }
 	})
 };
@@ -80,14 +83,25 @@ var iterateOverResponse = function(collection, userId){
 }
 
 var saveMedia = function(media, userId){
+	if(media.type == 'image'){
+		var lowResUrl = media.images.low_resolution.url
+		var thumbnail = media.images.thumbnail.url
+		var standardUrl = media.images.standard_resolution.url
+	}else{
+		var lowResUrl = media.videos.low_resolution.url
+		var thumbnail = media.images.standard_resolution.url
+		var standardUrl = media.videos.standard_resolution.url
+	}
+
+
 	var media = new Media ({
-		title: "Memorie ",
+		title: "Memorie",
 		tags : media.tags,
 		mediaType: media.type,
 		location: media.location,
-		lowResUrl: media.images.low_resolution.url,
-		thumbnail: media.images.thumbnail.url,
-		standardUrl: media.images.standard_resolution.url,
+		lowResUrl: lowResUrl,
+		thumbnail: thumbnail,
+		standardUrl: standardUrl,
 		instagramId: media.id,
 		user: userId
 	});
