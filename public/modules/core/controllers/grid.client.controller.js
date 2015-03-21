@@ -22,5 +22,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
       var instagram_id = user.providerData.data.id;
       loadPics(user._id, instagram_id);
     };
+
+
 	}
 ]);
