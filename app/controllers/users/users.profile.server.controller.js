@@ -91,13 +91,18 @@ var iterateOverResponse = function(collection, userId){
 
 var saveMedia = function(media, userId){
 	if(media.type == 'image'){
-		var lowResUrl = media.images.low_resolution.url
-		var thumbnail = media.images.thumbnail.url
-		var standardUrl = media.images.standard_resolution.url
+		var lowResUrl = media.images.low_resolution.url;
+		var thumbnail = media.images.thumbnail.url;
+		var standardUrl = media.images.standard_resolution.url;
+		var videoStandardUrl = '';
+		var videoLowUrl = '';
+
 	}else{
-		var lowResUrl = media.videos.low_resolution.url
-		var thumbnail = media.images.standard_resolution.url
-		var standardUrl = media.videos.standard_resolution.url
+		var lowResUrl = media.images.low_resolution.url;
+		var thumbnail = media.images.thumbnail.url;
+		var standardUrl = media.images.standard_resolution.url;
+		var videoStandardUrl = media.videos.low_resolution.url;
+		var videoLowUrl = media.videos.standard_resolution.url;
 	}
 
 
@@ -106,9 +111,11 @@ var saveMedia = function(media, userId){
 		tags : media.tags,
 		mediaType: media.type,
 		location: media.location,
-		lowResUrl: lowResUrl,
-		thumbnail: thumbnail,
-		standardUrl: standardUrl,
+		imageLowResUrl: lowResUrl,
+		imageThumbnail: thumbnail,
+		imageStandardUrl: thumbnail,
+		videoStandardUrl: videoStandardUrl,
+		videoLowUrl: videoLowUrl,
 		instagramId: media.id,
 		user: mongoose.Types.ObjectId(userId)
 	});
@@ -119,14 +126,11 @@ var saveMedia = function(media, userId){
 	})
 }
 
-
 	/**
 	 * Media of a user
 	 */
 	exports.findMedia = function(req, res){
-		console.log(req.param('user_id'));
 		var userId = new ObjectId(req.param('user_id'));
-		console.log('userId');
 		var query = Media.where({"user": userId});
 		query.find(function(err, media) {
 			if (err) {

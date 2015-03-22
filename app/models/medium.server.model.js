@@ -54,17 +54,27 @@ var MediumSchema = new Schema({
 	  street_address: {type: String, default: '', trim: true},
 	  name: {type: String, default: '', trim: true}
   },
-  lowResUrl: {
+  imageLowResUrl: {
 		type: String,
 		default: '',
 		trim: true
   },
-  thumbnail: {
+  imageThumbnail: {
   	type: String,
   	default: '',
 		trim: true
   },
-  standardUrl: {
+  imageStandardUrl: {
+  	type: String,
+  	default: '',
+		trim: true
+  },
+  videoStandardUrl: {
+  	type: String,
+  	default: '',
+		trim: true
+  },
+  videoLowUrl: {
   	type: String,
   	default: '',
 		trim: true

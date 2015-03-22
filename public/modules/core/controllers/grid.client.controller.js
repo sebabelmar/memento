@@ -27,6 +27,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
         params: {"user_id": id}
       }).then(function(response){
         $scope.media = response.data
+        console.log($scope.media);
       });
     }
 
