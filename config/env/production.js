@@ -24,8 +24,8 @@ module.exports = {
 		js: 'public/dist/application.min.js'
 	},
 	instagram: {
-		clientID: process.env.INSTAGRAM_ID || 'aab5e63dbef24de2a92288f892bd5c77',
-		clientSecret: process.env.INSTAGRAM_SECRET || '142b894c7f1642dfbc20f4e90f72c9e0',
+		clientID: process.env.INSTAGRAM_ID ,
+		clientSecret: process.env.INSTAGRAM_SECRET ,
 		callbackURL: '/auth/instagram/callback'
 	},
 	facebook: {

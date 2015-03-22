@@ -11,6 +11,7 @@ var _ = require('lodash'),
  */
 module.exports = _.extend(
 	require('./env/all'),
+	require('dotenv').load(),
 	require('./env/' + process.env.NODE_ENV) || {}
 );
 
