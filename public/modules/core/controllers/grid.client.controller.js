@@ -43,5 +43,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
       getMedia(user._id);
     };
 
+
+
 	}
 ]);
