@@ -4,8 +4,11 @@
 
   <button ng-click="populateGrid()" ng-if="true" type="button">populate grid</button>
 
-  <div ng-repeat="">
-
-
+  <div ng-repeat="pic in media">
+    <ul>
+      <li>
+        <img src="{{pic.standardUrl}}">
+      </li>
+    </ul>
   </div>
 </section>

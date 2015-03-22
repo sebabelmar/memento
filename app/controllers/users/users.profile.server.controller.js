@@ -62,9 +62,14 @@ exports.me = function(req, res) {
  * Send User's pics
  */
 exports.loadMedia = function(req, res){
-	var url =  "https://api.instagram.com/v1/users/" + req.param('instagram_id') + "/media/recent/?client_id=aab5e63dbef24de2a92288f892bd5c77";
+	https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=
+	var url =  "https://api.instagram.com/v1/users/" + req.param('instagram_id') + "/media/recent/?access_token=" + req.param('token');
 	console.log("vamos bien")
+	console.log(req.param('instagram_id'))
+	console.log(url)
+
 	request(url, function (error, response, body) {
+
 	  if (!error && response.statusCode == 200) {
 			var instagramPics = JSON.parse(body);
 			var user_id = req.param('user_id');
