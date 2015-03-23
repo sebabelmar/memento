@@ -11,5 +11,8 @@ angular.module('media').controller('MediaModalController', ['$scope', 'pic',
       $scope.showVideo = true
     }
 
+    $scope.memorie = ''
+
+
 	}
 ]);

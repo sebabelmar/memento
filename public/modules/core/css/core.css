@@ -65,3 +65,44 @@
 .icon{
   margin-right:-26.5rem;
 }
+
+/*grid*/
+.thumbnail-seba {
+  display: block;
+  padding: 4px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.col-seba{
+  width: 150px;
+  display: inline-block;
+}
+
+.pics-container{
+  margin-top: 2%;
+  margin-left: 17%;
+  max-width: 860px;
+}
+/*end of grid*/
+.imagen{
+  width: 100%;
+}
+
+.foot-fixed-bottom {
+height: 20%;
+ bottom: 8px;
+ display: block;
+ margin-bottom: 0;
+ position: fixed;
+ z-index: 1030;
+}
+
+.memorie-form{
+  display: inline-flex;
+}
+
+.memorie-area{
+  height: 100px;
+}
