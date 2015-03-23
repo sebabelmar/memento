@@ -113,7 +113,7 @@ var saveMedia = function(media, userId){
 		location: media.location,
 		imageLowResUrl: lowResUrl,
 		imageThumbnail: thumbnail,
-		imageStandardUrl: thumbnail,
+		imageStandardUrl: standardUrl,
 		videoStandardUrl: videoStandardUrl,
 		videoLowUrl: videoLowUrl,
 		instagramId: media.id,

@@ -44,25 +44,22 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
     };
 
     // Pop-up the modal
-    $scope.showInfoModal = function(element){
+    $scope.showInfoModal = function(pic){
       var modalInstance = $modal.open({
         // template: "<div>Message goes here...<button >Continue</button></div>"
-        templateUrl: '/templates/modals/resourceInfo.html',
-        controller: "ResourceInfoCtrl",
-        windowClass: 'mdModal',
-        size: 'sm',
+        templateUrl: '/modules/media/views/media-modal.client.view.html',
+        controller: "MediaModalController",
+        // windowClass: 'mdModal',
+        size: 'lg',
         resolve: {
           user: function(){
             return user
           },
-          element: function(){
-            return element
+          pic: function(){
+            return pic
           }
         }
       })
-     }
-
-
-
+    }
 	}
 ]);
