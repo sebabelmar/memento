@@ -1,0 +1,36 @@
+<section>
+  <div class='row'>
+
+    <div class='col-lg-8 col-md-8 col-xs-8'>
+      <img class='imagen' src="{{picture.imageStandardUrl}}">
+    </div>
+
+    <div class='col-lg-4 col-md-4 col-xs-4'>
+
+      <a ng-if="showVideo" href="{{videoUrl}}" target="_blank">video</a>
+      <div>
+        <p>{{memorie}}</p>
+      </div>
+
+      <div class='foot-fixed-bottom'>
+        <form  class="css-form memorie-form">
+          <textarea class="memorie-area" type="text" required placeholder="memories" ng-model="memorie"></textarea>
+          <input type="submit" ng-click="saveMemorie()" value="Remeber" />
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- We'll support embbeded videos soon -->
+<!--   <div ng-if="showVideo">
+    <video ng-model="picture" autoplay name='media'>
+      <source ng-src="{{picture.videoStandardUrl}}" type="video/mp4">
+    </video>
+  </div> -->
+
+</section>
+

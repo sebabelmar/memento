@@ -1,14 +1,9 @@
 <section data-ng-controller="GridController">
-	<h1>This is the Grid</h1>
-  <button ng-click="getPicsYo()" ng-if="true" type="button">Sync!</button>
-
-  <button ng-click="populateGrid()" ng-if="true" type="button">populate grid</button>
-
-  <div ng-repeat="pic in media">
-    <ul>
-      <li>
-        <img src="{{pic.imageThumbnail}}">
-      </li>
-    </ul>
+  <div class="row pics-container">
+    <div class="col-lg-3 col-md-4 col-xs-6 col-seba" ng-repeat="pic in media">
+      <a class="thumbnail-seba" ng-click="showInfoModal(pic)" href="">
+        <img class="img-responsive" src="{{pic.imageThumbnail}}" alt="">
+      </a>
+    </div>
   </div>
 </section>

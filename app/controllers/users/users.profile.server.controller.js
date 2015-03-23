@@ -107,13 +107,13 @@ var saveMedia = function(media, userId){
 
 
 	var media = new Media ({
-		title: "Memorie",
+		title: "",
 		tags : media.tags,
 		mediaType: media.type,
 		location: media.location,
 		imageLowResUrl: lowResUrl,
 		imageThumbnail: thumbnail,
-		imageStandardUrl: thumbnail,
+		imageStandardUrl: standardUrl,
 		videoStandardUrl: videoStandardUrl,
 		videoLowUrl: videoLowUrl,
 		instagramId: media.id,
