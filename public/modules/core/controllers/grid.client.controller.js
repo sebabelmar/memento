@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('GridController', ['$scope','$http', 'Authentication', 'Media',
-	function($scope, $http, Authentication, Media) {
+angular.module('core').controller('GridController', ['$scope','$http', 'Authentication', 'Media', '$modal',
+	function($scope, $http, Authentication, Media, $modal) {
 
     // Authenticated User
     var user = Authentication.user;
@@ -42,6 +42,25 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
     $scope.populateGrid = function (){
       getMedia(user._id);
     };
+
+    // Pop-up the modal
+    $scope.showInfoModal = function(element){
+      var modalInstance = $modal.open({
+        // template: "<div>Message goes here...<button >Continue</button></div>"
+        templateUrl: '/templates/modals/resourceInfo.html',
+        controller: "ResourceInfoCtrl",
+        windowClass: 'mdModal',
+        size: 'sm',
+        resolve: {
+          user: function(){
+            return user
+          },
+          element: function(){
+            return element
+          }
+        }
+      })
+     }
 
 
 
