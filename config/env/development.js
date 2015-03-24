@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: process.env.MONGOLAB_URI,
+	db: 'mongodb://heroku_app35184575:qm4kcfini3sb10e1fomijr34cg@ds031551.mongolab.com:31551/heroku_app35184575',
 	app: {
 		title: 'memento - Development Environment'
 	},
