@@ -41,7 +41,8 @@
 		"async": "~0.9.0",
 		"nodemailer": "~1.3.0",
 		"chalk": "~0.5",
-		"mongoose-unique-validator": "~0.4.1"
+		"mongoose-unique-validator": "~0.4.1",
+		"request": "~2.53.1"
 	},
 	"devDependencies": {
 		"supertest": "~0.14.0",
@@ -65,6 +66,7 @@
 		"karma-chrome-launcher": "~0.1.2",
 		"karma-firefox-launcher": "~0.1.3",
 		"karma-phantomjs-launcher": "~0.1.2",
-		"mongoose-unique-validator": "~0.4.1"
+		"mongoose-unique-validator": "~0.4.1",
+		"request": "~2.53.1"
 	}
 }
