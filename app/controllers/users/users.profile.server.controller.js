@@ -107,7 +107,7 @@ var saveMedia = function(media, userId){
 
 
 	var media = new Media ({
-		title: "",
+		title: "Seba",
 		tags : media.tags,
 		mediaType: media.type,
 		location: media.location,
