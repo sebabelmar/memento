@@ -25,7 +25,7 @@ angular.module('media').controller('MediaController', ['$scope', '$stateParams',
 
 		// Remove existing Medium
 		$scope.remove = function(medium) {
-			if ( medium ) { 
+			if ( medium ) {
 				medium.$remove();
 
 				for (var i in $scope.media) {
@@ -58,7 +58,7 @@ angular.module('media').controller('MediaController', ['$scope', '$stateParams',
 
 		// Find existing Medium
 		$scope.findOne = function() {
-			$scope.medium = Media.get({ 
+			$scope.medium = Media.get({
 				mediumId: $stateParams.mediumId
 			});
 		};

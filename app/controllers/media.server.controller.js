@@ -84,6 +84,12 @@ exports.list = function(req, res) {
 	});
 };
 
+exports.memorie = function(req, res) {
+	cosole.log("in memorie")
+}
+
+
+
 /**
  * Medium middleware
  */

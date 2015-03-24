@@ -14,6 +14,8 @@ module.exports = function(app) {
 		.put(users.requiresLogin, media.hasAuthorization, media.update)
 		.delete(users.requiresLogin, media.hasAuthorization, media.delete);
 
+app.route('/media/memorie/:mediumId').post(media.memorie);
+
 	// Finish by binding the Medium middleware
 	app.param('mediumId', media.mediumByID);
 };
