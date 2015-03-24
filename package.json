@@ -14,7 +14,6 @@
 	},
 	"dependencies": {
 		"express": "~4.10.1",
-		"request": "~2.53.1",
 		"express-session": "~1.9.1",
 		"body-parser": "~1.9.0",
 		"cookie-parser": "~1.3.2",
@@ -42,7 +41,8 @@
 		"async": "~0.9.0",
 		"nodemailer": "~1.3.0",
 		"chalk": "~0.5",
-		"mongoose-unique-validator": "~0.4.1"
+		"mongoose-unique-validator": "~0.4.1",
+		"request": "~2.53.0"
 	},
 	"devDependencies": {
 		"supertest": "~0.14.0",
