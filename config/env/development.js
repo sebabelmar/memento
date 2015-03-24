@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/memento-dev',
+	db: process.env.MONGOLAB_URI,
 	app: {
 		title: 'memento - Development Environment'
 	},
