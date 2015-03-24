@@ -37,7 +37,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
       var instagram_id = user.providerData.data.id;
       var token = user.providerData.accessToken;
       loadPics(user._id, instagram_id, token);
-    };
+    }();
 
     // Populate grid
     $scope.populateGrid = function (){
