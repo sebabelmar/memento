@@ -2,7 +2,7 @@
 
 module.exports = {
 	port: 443,
-	db: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/memento',
+	db: 'mongodb://heroku_app35181390:Sebalibre13@ds037387.mongolab.com:37387/heroku_app35181390',
 	assets: {
 		lib: {
 			css: [
