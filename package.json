@@ -42,7 +42,8 @@
 		"nodemailer": "~1.3.0",
 		"chalk": "~0.5",
 		"mongoose-unique-validator": "~0.4.1",
-		"request": "~2.53.0"
+		"request": "~2.53.0",
+		"passport-instagram": "0.1.2"
 	},
 	"devDependencies": {
 		"supertest": "~0.14.0",
