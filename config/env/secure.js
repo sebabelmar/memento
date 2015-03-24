@@ -2,7 +2,7 @@
 
 module.exports = {
 	port: 443,
-	db: process.env.MONGOLAB_URI,
+	db: process.env.MONGOHQ_URL,
 	assets: {
 		lib: {
 			css: [
