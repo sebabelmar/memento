@@ -3,7 +3,12 @@
 angular.module('media').controller('MediaModalController', ['$scope', 'pic', 'user','$http',
   function($scope, pic, user, $http) {
     $scope.picture = pic
+    $scope.memories = $scope.picture.memories
+
     var user = user
+
+    console.log($scope.picture)
+    console.log($scope.memories)
 
     if ($scope.picture.videoStandardUrl == ''){
       $scope.showPic = true
@@ -12,17 +17,18 @@ angular.module('media').controller('MediaModalController', ['$scope', 'pic', 'us
       $scope.showVideo = true
     }
 
-    $scope.memorie = ''
+    $scope.postMemorie = function(){
+      $http({
+        method: "POST",
+        url: "/media/memorie/" + pic._id,
+        params: {"content": $scope.content}
+      })
 
-    // var postMemorie = function(){
-    //   $http({
-    //     method: "POST",
-    //     url: "/media/memorie/" + picture.id,
-    //     params: {"user_id": id}
-    //   }).then(function(response){
-    //     console.log("Posted");
-    //   });
-    // }();
+      // THIS NEED TO BE INSIDE THEN OR SUCESS
+      console.log("Posted")
+      $scope.memories.push({content: $scope.content})
+      $scope.content = ''
+    };
 
 
 	}

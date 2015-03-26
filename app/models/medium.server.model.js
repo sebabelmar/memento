@@ -11,11 +11,6 @@ var mongoose = require('mongoose'),
  * Memories Schema
  */
 var Memorie = new Schema({
-	title :{
-		type: String,
-		default: '',
-		trim: true
-	},
 	content: {
 		type: String,
 		default: '',

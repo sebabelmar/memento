@@ -84,9 +84,26 @@ exports.list = function(req, res) {
 	});
 };
 
+
+/**
+ * Saving Memorie Media
+ */
 exports.memorie = function(req, res) {
-	cosole.log("in memorie")
+	var medium = req.medium;
+	console.log("in memorie");
+	console.log(medium);
+	req.param('content')
+
+	medium.memories.push({content: req.param('content')})
+
+	medium.save(function (err) {
+	  if (!err) console.log('Success fuck yeah! -from savmemo');
+	});
 }
+
+
+
+
 
 
 

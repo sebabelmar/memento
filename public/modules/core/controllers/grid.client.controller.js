@@ -16,7 +16,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
       }).then(function(res){
         console.log(res)
       });
-    }
+    };
 
     // This should live in media service with media routes
     // This hits users route and users.profile.controller
@@ -29,7 +29,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
         $scope.media = response.data
         console.log($scope.media);
       });
-    }
+    };
 
     // Exec on LOAD
     // Need a find a way to hit API one time.
@@ -37,7 +37,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
       var instagram_id = user.providerData.data.id;
       var token = user.providerData.accessToken;
       loadPics(user._id, instagram_id, token);
-    }();
+    };
 
     // Populate grid
     $scope.populateGrid = function (){

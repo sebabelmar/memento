@@ -8,14 +8,18 @@
     <div class='col-lg-4 col-md-4 col-xs-4'>
 
       <a ng-if="showVideo" href="{{videoUrl}}" target="_blank">video</a>
-      <div>
-        <p>{{memorie}}</p>
+      <div ng-repeat="memo in memories">
+        <p>{{memo.content}}</p>
       </div>
+      <div>
+        <p>{{content}}</p>
+      </div>
+
 
       <div class='foot-fixed-bottom'>
         <form  class="css-form memorie-form">
-          <textarea class="memorie-area" type="text" required placeholder="memories" ng-model="memorie"></textarea>
-          <input type="submit" ng-click="saveMemorie()" value="Remeber" />
+          <textarea class="memorie-area" type="text" required placeholder="memories" ng-model="content"></textarea>
+          <input type="submit" ng-click="postMemorie()" value="Remeber" />
         </form>
       </div>
 
