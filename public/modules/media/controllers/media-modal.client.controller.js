@@ -18,6 +18,7 @@ angular.module('media').controller('MediaModalController', ['$scope', 'pic', 'us
     }
 
     $scope.postMemorie = function(){
+      console.log('in post Memorie')
       $http({
         method: "POST",
         url: "/media/memorie/" + pic._id,

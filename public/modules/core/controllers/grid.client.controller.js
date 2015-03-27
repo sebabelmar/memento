@@ -42,7 +42,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
     // Populate grid
     $scope.populateGrid = function (){
       getMedia(user._id);
-    }();
+    };
 
     // Pop-up the modal
     $scope.showInfoModal = function(pic){
