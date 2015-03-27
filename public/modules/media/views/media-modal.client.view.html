@@ -3,24 +3,48 @@
 
     <div class='col-lg-8 col-md-8 col-xs-8'>
       <img class='imagen' src="{{picture.imageStandardUrl}}">
+      <p class="date" >Taken on {{picture.takenAt | date : format : 'longDate'}}</p>
     </div>
 
-    <div class='col-lg-4 col-md-4 col-xs-4'>
+    <div class='col-lg-4 col-md-4 col-xs-4 memories-section'>
 
-      <a ng-if="showVideo" href="{{videoUrl}}" target="_blank">video</a>
-      <div ng-repeat="memo in memories">
-        <p>{{memo.content}}</p>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-xs-4">
+          <img class="avatar" ng-src="{{user.providerData.data.profile_picture}}">
+        </div>
+
+         <div class="col-lg-8 col-md-8 col-xs-8">
+            <p class="user-name">{{user.providerData.data.full_name}}</p>
+         </div>
+          <span ng-if="showVideo" class="video">
+            <p> Watch video</p>
+            <a href="{{videoUrl}}" target="_blank">
+              <i class="glyphicon glyphicon-facetime-video"></i>
+            </a>
+          </span>
       </div>
-      <div>
-        <p>{{content}}</p>
-      </div>
+
+
+      <hr class="hr">
+      <accordion close-others="oneAtATime">
+        <accordion-group  ng-repeat="memo in memories" heading="Memorie from {{memo.created | date : format : 'longDate'}}">
+          <span class="delete-btn">
+            <a href="" ng-click="">
+              <i class="glyphicon glyphicon-remove"></i>
+            </a>
+          </span>
+          <p>{{memo.content}}</p>
+        </accordion-group>
+      </accordion>
 
 
       <div class='foot-fixed-bottom'>
         <form  class="css-form memorie-form">
-          <textarea class="memorie-area" type="text" required placeholder="memories" ng-model="content"></textarea>
-          <button ng-click="letsMemorie()"> Memorie it</button>
-          <input type="submit" ng-click="letsMemorie()" value="Remeber" />
+          <textarea class="memorie-area" type="text" required placeholder="write some memories" ng-model="content"></textarea>
+          <button class="btn" ng-click="letsMemorie()">
+            <i class="glyphicon glyphicon-heart-empty"></i>
+          </button>
+      <!--     <input type="submit" ng-click="letsMemorie()" value="" /> -->
         </form>
       </div>
 

@@ -90,6 +90,8 @@ var iterateOverResponse = function(collection, userId){
 }
 
 var saveMedia = function(media, userId){
+	console.log(media)
+	var createdAt = new Date(media.created_time*1000)
 	if(media.type == 'image'){
 		var lowResUrl = media.images.low_resolution.url;
 		var thumbnail = media.images.thumbnail.url;
@@ -108,6 +110,7 @@ var saveMedia = function(media, userId){
 
 	var media = new Media ({
 		title: "Seba",
+		takenAt: createdAt,
 		tags : media.tags,
 		mediaType: media.type,
 		location: media.location,

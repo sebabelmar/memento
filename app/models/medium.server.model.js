@@ -29,12 +29,10 @@ var MediumSchema = new Schema({
 	title: {
 		type: String,
 		default: '',
-		trim: true,
-		required: 'Title cannot be blank'
+		trim: true
 	},
 	takenAt:{
 		type: Date,
-		default: Date.now
 	},
 	tags :{
 		type: [],
