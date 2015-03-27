@@ -17,8 +17,10 @@ angular.module('media').controller('MediaModalController', ['$scope', 'pic', 'us
       $scope.showVideo = true
     }
 
-    $scope.postMemorie = function(){
+    $scope.letsMemorie = function(){
       console.log('in post Memorie')
+      console.log('this shit should work!')
+
       $http({
         method: "POST",
         url: "/media/memorie/" + pic._id,
