@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('media').controller('MediaModalController', ['$scope', 'pic', 'user','$http',
-  function($scope, pic, user, $http) {
+angular.module('media').controller('MediaModalController', ['$scope', '$modalInstance', '$rootScope', 'pic', 'user','$http',
+  function($scope, $modalInstance, $rootScope, pic, user, $http) {
     $scope.picture = pic
     $scope.memories = $scope.picture.memories
 
