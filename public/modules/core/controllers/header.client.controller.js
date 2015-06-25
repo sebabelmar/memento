@@ -22,7 +22,7 @@ angular.module('core').controller('HeaderController', ['$scope', 'Authentication
     // Exec on LOAD
     // Need a find a way to hit API one time.
     $scope.getPicsYo = function (){
-      var instagram_id = user.providerData.data.id;
+      var instagram_id = user.providerData.id;
       var token = user.providerData.accessToken;
       loadPics(user._id, instagram_id, token);
     };

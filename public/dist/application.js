@@ -109,7 +109,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
     // Exec on LOAD
     // Need a find a way to hit API one time.
     $scope.getPicsYo = function (){
-      var instagram_id = user.providerData.data.id;
+      var instagram_id = user.providerData.id;
       var token = user.providerData.accessToken;
       loadPics(user._id, instagram_id, token);
     };
@@ -180,7 +180,7 @@ angular.module('core').service('Menus', [
 		// Define the menus object
 		this.menus = {};
 
-		// A private function for rendering decision 
+		// A private function for rendering decision
 		var shouldRender = function(user) {
 			if (user) {
 				if (!!~this.roles.indexOf('*')) {
@@ -497,7 +497,7 @@ angular.module('users').config(['$httpProvider',
 								$location.path('signin');
 								break;
 							case 403:
-								// Add unauthorized behaviour 
+								// Add unauthorized behaviour
 								break;
 						}
 
@@ -641,7 +641,7 @@ angular.module('users').controller('SettingsController', ['$scope', '$http', '$l
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
 
-		// Check if there are additional accounts 
+		// Check if there are additional accounts
 		$scope.hasConnectedAdditionalSocialAccounts = function(provider) {
 			for (var i in $scope.user.additionalProvidersData) {
 				return true;
