@@ -1,11 +1,42 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', 'Authentication', 'Menus', '$http',
-	function($scope, Authentication, Menus, $http) {
+angular.module('core').controller('HeaderController', ['$scope', 'Authentication', 'Menus', '$modal','$http',
+	function($scope, Authentication, Menus, $modal, $http) {
 		$scope.authentication = Authentication;
 
     // Authenticated User
     var user = Authentication.user;
+
+    //Modals for sign in and sign up
+    $scope.openSignIn = function () {
+
+      var modalInstance = $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'modules/core/views/sign-in.client.view.html',
+        controller: 'AuthenticationController',
+        size: 'lg',
+        resolve: {
+          // items: function () {
+          //   return $scope.items;
+          // }
+        }
+      });
+    };
+
+    $scope.openSignUp = function () {
+
+      var modalInstance = $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'modules/core/views/sign-up.client.view.html',
+        controller: 'AuthenticationController',
+        size: 'lg',
+        resolve: {
+          // items: function () {
+          //   return $scope.items;
+          // }
+        }
+      });
+    };
 
     // I need to move this to the User service
     // This hits users route and users.profile.controller

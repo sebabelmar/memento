@@ -9,10 +9,12 @@
 		<a href="/#!/" class="navbar-brand">memento</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
-		<div class="icon nav navbar-nav navbar-right" data-ng-hide="authentication.user">
-			<a class=" undecorated-link" href="/auth/instagram">
+		<div class="icon nav navbar-nav" data-ng-hide="authentication.user">
+			<a href ng-click="openSignIn()" class="navbar-brand">sign in</a>
+			<a href ng-click="openSignUp()" class="navbar-brand">sign up</a>
+			<!-- <a class=" undecorated-link" href="/auth/instagram">
 				<img class="instagram-logo" src="/modules/users/img/buttons/instagram.png">
-			</a>
+			</a> -->
 		</div>
 		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
 			<li>
