@@ -6,7 +6,12 @@ angular.module('users').factory('Users', ['$resource',
 		return $resource('users', {}, {
 			update: {
 				method: 'PUT'
-			}
+			},
+      createInvitationCode: {
+        method: "PUT",
+          url: "/users/create_invitation_code",
+          params: {"user": user}
+      }
 		});
 	}
 ]);

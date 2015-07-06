@@ -82,6 +82,23 @@ var UserSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
+	/* User's host/guest */
+	host: {
+		type: Boolean;
+		default: false
+	},
+	guests: {
+		type: [Schema.Types.ObjectId]
+	},
+	hostId: {
+		type: Schema.ObjectId,
+		ref: 'User'
+	}
+	/* For reset password */
+	invitationCode{
+		type: String,
+		default: ''
+	},
 	/* For reset password */
 	resetPasswordToken: {
 		type: String

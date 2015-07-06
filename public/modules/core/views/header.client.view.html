@@ -9,10 +9,13 @@
 		<a href="/#!/" class="navbar-brand">memento</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
-		<div class="icon nav navbar-nav navbar-right" data-ng-hide="authentication.user">
-			<a class=" undecorated-link" href="/auth/instagram">
+		<div class="icon nav navbar-nav" data-ng-hide="authentication.user">
+			<a href="/#!/signin" class="btn btn-cta btn-cta-secondary navbar-brand">log in</a>
+			<a href="/#!/signup" class="navbar-brand">sign up</a>
+
+<!-- 			<a class=" undecorated-link" href="/auth/instagram">
 				<img class="instagram-logo" src="/modules/users/img/buttons/instagram.png">
-			</a>
+			</a> -->
 		</div>
 		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
 			<li>
@@ -30,8 +33,8 @@
 					<li>
 						<a href="/#!/settings/profile">Edit Profile</a>
 					</li>
-					<li>
-						<a href="/#!/settings/accounts">Manage Social Accounts</a>
+					<li ng-show="user.provider ==">
+						<a href="/#!/settings/invitation_code">Invitation Code</a>
 					</li>
 					<li data-ng-show="authentication.user.provider === 'local'">
 						<a href="/#!/settings/password">Change Password</a>

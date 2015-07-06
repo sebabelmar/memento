@@ -5,6 +5,36 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
         // Authenticated User
         var user = Authentication.user;
 
+        // Profile modal
+          var openProfileModal = function () {
+
+          var modalInstance = $modal.open({
+            templateUrl: 'modules/core/views/profile-modal.client.view.html',
+            controller: 'SettingsController',
+            size: 'lg',
+            backdrop : 'static',
+            keyboard: false,
+            // resolve: {
+            //   modalInstance: function () {
+            //     return $modalInstance;
+            //   }
+            // }
+          });
+
+          $scope.cancel = function () {
+            console.log("from cancel")
+            $modalInstance.dismiss('cancel');
+          };
+
+       // modalInstance.result.then(function (selectedItem) {
+          //   $scope.selected = selectedItem;
+          // }, function () {
+          //   $log.info('Modal dismissed at: ' + new Date());
+          // });
+        }();
+
+
+
         // This should live in media service with media routes
         // This hits users route and users.profile.controller
         var getMedia = function(id){
