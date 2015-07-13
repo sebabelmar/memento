@@ -1,11 +1,17 @@
 'use strict';
 
-angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', '$rootScope',
-	function($scope, $http, $location, Users, Authentication, $rootScope) {
+angular.module('users').controller('SettingsController', ['$scope', '$http', '$location', 'Users', 'Authentication', '$modalInstance',
+	function($scope, $http, $location, Users, Authentication, $modalInstance) {
 		$scope.user = Authentication.user;
 
 		// If user is not signed in then redirect back home
 		if (!$scope.user) $location.path('/');
+
+		//Close modal instance
+    $scope.cancel = function () {
+      console.log("from ok")
+			$modalInstance.close();
+		};
 
 		// Check if there are additional accounts
 		$scope.hasConnectedAdditionalSocialAccounts = function(provider) {

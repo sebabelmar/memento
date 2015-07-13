@@ -6,34 +6,15 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
         var user = Authentication.user;
 
         // Profile modal
-          var openProfileModal = function () {
-
-            var modalInstance = $modal.open({
-              templateUrl: 'modules/core/views/profile-modal.client.view.html',
-              controller: 'SettingsController',
-              size: 'lg',
-              backdrop : 'static',
-              keyboard: false,
-              // resolve: {
-              //   modalInstance: function () {
-              //     return $modalInstance;
-              //   }
-              // }
-            });
-
-         // modalInstance.result.then(function (selectedItem) {
-            //   $scope.selected = selectedItem;
-            // }, function () {
-            //   $log.info('Modal dismissed at: ' + new Date());
-            // });
+        var openProfileModal = function () {
+          var modalInstance = $modal.open({
+            templateUrl: 'modules/core/views/profile-modal.client.view.html',
+            controller: 'SettingsController',
+            size: 'lg',
+            backdrop : 'static',
+            keyboard: false,
+          });
         }();
-
-        $scope.cancel = function () {
-          console.log("from cancel")
-          $modalInstance.dismiss('cancel');
-        };
-
-
 
         // This should live in media service with media routes
         // This hits users route and users.profile.controller
