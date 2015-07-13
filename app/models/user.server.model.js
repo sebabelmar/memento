@@ -84,7 +84,7 @@ var UserSchema = new Schema({
 	},
 	/* User's host/guest */
 	host: {
-		type: Boolean;
+		type: Boolean,
 		default: false
 	},
 	guests: {
@@ -93,9 +93,9 @@ var UserSchema = new Schema({
 	hostId: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	}
+	},
 	/* For reset password */
-	invitationCode{
+	invitationCode: {
 		type: String,
 		default: ''
 	},

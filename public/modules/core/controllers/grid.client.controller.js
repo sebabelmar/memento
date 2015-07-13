@@ -6,7 +6,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
         var user = Authentication.user;
 
         // Profile modal
-          var openProfileModal = function () {
+        var openProfileModal = function () {
 
           var modalInstance = $modal.open({
             templateUrl: 'modules/core/views/profile-modal.client.view.html',
@@ -31,7 +31,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
           // }, function () {
           //   $log.info('Modal dismissed at: ' + new Date());
           // });
-        }();
+        };
 
 
 
@@ -51,7 +51,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
         // Populate grid
         $scope.populateGrid = function (){
           getMedia(user._id);
-        }();
+        };
 
         // Pop-up the modal
         $scope.showInfoModal = function(pic){
