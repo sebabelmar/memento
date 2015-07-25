@@ -6,7 +6,8 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a href="/#!/" class="navbar-brand">memento</a>
+		<a href="/#!/" class="navbar-brand" data-ng-hide="authentication.user">memento</a>
+		<a href="/#!/grid" class="navbar-brand" data-ng-show="authentication.user">memento</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 		<div class="icon nav navbar-nav" data-ng-hide="authentication.user">
@@ -33,8 +34,8 @@
 					<li>
 						<a href="/#!/settings/profile">Edit Profile</a>
 					</li>
-					<li ng-show="user.provider == 'instagram'">
-						<a href="/#!/settings/invitation_code">Invitation Code</a>
+					<li data-ng-show="authentication.user.provider === 'instagram'">
+						<a href="/#!/settings/invitation-code">Invite</a>
 					</li>
 					<li data-ng-show="authentication.user.provider === 'local'">
 						<a href="/#!/settings/password">Change Password</a>

@@ -1,3 +1,10 @@
-<section data-ng-controller="SettingsController">
-	This is the Invitation code
+<section data-ng-controller="InvitationController">
+
+  <div>
+    <h3>This is the Invitation code: {{user.invitationCode}}</h3>
+
+
+    <button data-ng-click="generateCode()">Generate Code</button>
+    <p data-ng-show="error != null">{{error}}</p>
+  </div>
 </section>

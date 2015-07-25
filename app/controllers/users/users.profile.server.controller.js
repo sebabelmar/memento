@@ -186,6 +186,7 @@ var saveMedia = function(media, userId){
 				});
 			} else {
 				console.log("WIN")
+				console.log(media)
 				res.jsonp(media);
 			}
 		});

@@ -14,7 +14,9 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
             backdrop : 'static',
             keyboard: false,
           });
-        }();
+        };
+
+        if (user.authenticated == false) {openProfileModal()}
 
         // This should live in media service with media routes
         // This hits users route and users.profile.controller
@@ -24,6 +26,8 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
             url: "/users/find_media",
             params: {"user_id": id}
           }).then(function(response){
+
+
             $scope.media = response.data
             console.log($scope.media);
           });
@@ -51,6 +55,7 @@ angular.module('core').controller('GridController', ['$scope','$http', 'Authenti
               }
             }
           })
-        }
+        };
+
     }
 ]);

@@ -5,7 +5,7 @@ angular.module('users').config(['$stateProvider',
 	function($stateProvider) {
 		// Users state routing
 		$stateProvider.
-		state('invitation-code', {
+		state('invitation', {
 			url: '/settings/invitation-code',
 			templateUrl: 'modules/users/views/invitation-code.client.view.html'
 		}).
