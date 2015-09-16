@@ -14,58 +14,17 @@
 	border-color: #78FA89;
 }
 
-.navbar-inverse {
-  opacity: 0.5;
-}
-
-.stage {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  margin-top: -50px;
-  margin-left: -70px;
-}
-
-.stage video{
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    margin-top: -190px;
-}
-
-.index {
-  position: absolute;
-  margin-left: 60%;
-  margin-top: 33%;
-  width: 33%;
-  font-weight: 100;
-  background: rgba(0,0,0,0.3);
-  color: white;
-  padding: 2rem;
-  font-size: 1.2rem;
-}
-
-.index p {
+.navbar-inverse .navbar-brand{
   color:#c2d2f0;
-  text-align: right;
-  margin-top: 1rem;
-  padding-top: 3.5rem;
-  margin-bottom: -1.5rem;
 }
 
-.index h3 {
+.navbar-inverse .navbar-nav > li > a {
   color:#c2d2f0;
-  margin-top: -1rem;
 }
 
-.instagram-logo {
-  width: 15%;
-  padding-top: 0.5rem;
-}
-
-.icon{
-  margin-right:-26.5rem;
+.hr{
+  margin-right: 39px;
+  width: 260px;
 }
 
 /*grid*/
@@ -89,20 +48,6 @@
 }
 /*end of grid*/
 
-.navbar-inverse .navbar-brand{
-  color:#c2d2f0;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-  color:#c2d2f0;
-}
-
-.hr{
-  margin-right: 39px;
-  width: 260px;
-}
-
-
 /*Modal*/
 .imagen{
   width: 100%;
@@ -118,7 +63,6 @@ height: 20%;
 }
 
 .memorie-form{
-
   display: inline-flex;
 }
 
@@ -130,7 +74,6 @@ height: 20%;
 
 .memories-section{
   color:#562A72;
-
 }
 
 .panel{
@@ -196,12 +139,54 @@ height: 20%;
   float: right;
 }
 
-.video{
-  color: #c2d2f0;
-  display: inline-flex;
-  margin-left: 30px;
+/*LANDING PAGE*/
+/* MOSAIC */
+#mosaic-1 {
+  margin: 0px 0px 0px 100px;
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
 }
 
-.video a{
-  padding-left: 5px;
+#mosaic-2 {
+  margin:-350px 0px 0px 550px;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+}
+
+#mosaic-3{
+  margin: -150px 0px 0px 150px; z-index:-300;
+}
+
+/* POLAROID */
+.polaroid {
+  position: relative;
+}
+
+.polaroid video {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid img {
+  width: 550px;
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+
+
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  bottom: 0px;
+  padding: 0px 0px 2px 8px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
 }

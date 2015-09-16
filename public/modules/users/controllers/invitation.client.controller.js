@@ -22,5 +22,9 @@ angular.module('users').controller('InvitationController', ['$scope', '$http', '
       updateUserProfile();
     };
 
+    $scope.addGuest = function(){
+      $scope.user
+    }
+
 	}
 ]);
